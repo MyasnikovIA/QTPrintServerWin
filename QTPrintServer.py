@@ -9,6 +9,12 @@ from traceback import format_exc
 from PyQt5.QtGui import QPainter
 from PyQt5.QtWidgets import QApplication, QLabel
 from PyQt5.QtPrintSupport import QPrinter
+from lib.index import index
+
+from lib.extlib1 import extlib1
+from lib.extlib2 import extlib2
+from lib.locale_ru import locale_ru
+from lib.css.theme_classic import theme_classic
 
 widthPage = 300
 heightPage = 100
@@ -107,15 +113,39 @@ def requestFun():
         printer_name = requestMessage.get("PrinterName")
     if "Print" in requestMessage:
         res = html_to_image(requestMessage["Print"], printer_name, widthPage, heightPage)
-        return dumps(res), 200
+        return dumps(res), 200, {'content-type': 'application/json'}
     if "Getprinterlist" in requestMessage:
-        return dumps(get_print_list()), 200
+        return dumps(get_print_list()), 200, {'content-type': 'application/json'}
     if "Message" in requestMessage:
         if '[GetPrinterList]' in requestMessage["Message"]:
-            return dumps(get_print_list()), 200
+            return dumps(get_print_list()), 200, {'content-type': 'application/json'}
     if "Version" in requestMessage:
         requestMessage["Version"] = version
-    return dumps(requestMessage), 200
+        return dumps(get_print_list()), 200, {'content-type': 'application/json'}
+
+    return index,200
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return "No content", 404
+
+
+@app.route('/<path:the_path>')
+def all_other_routes(the_path):
+    if (the_path == "ext.js"):
+        txt = "%s%s" % (extlib1, extlib2)
+        head = {'content-type': 'application/javascript; charset=utf-8', 'Content-Length': len(txt)}
+        return txt, 200, head
+
+    if (the_path == "locale-ru.js"):
+        head = {'content-type': 'application/javascript; charset=utf-8', 'Content-Length': len(locale_ru)}
+        return locale_ru, 200, head
+
+    if (the_path == "theme_classic.css"):
+        head = {'content-type': 'text/css; charset=utf-8', 'Content-Length': len(locale_ru)}
+        return theme_classic, 200, head
+    return "no content", 404
 
 
 if __name__ == '__main__':
