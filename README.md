@@ -14,7 +14,6 @@ BarsPyService.exe - сервис для печати
     BarsPyServer.exe      - Запуск сервера в фоновом режиме  
 **Сборка сервиса:**
 <pre>
-cd host
 pyinstaller --onefile  --noconsole --noupx --icon="app.ico" --hidden-import win32timezone QTPrintServer.py
 </pre> 
 
