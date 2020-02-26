@@ -7,7 +7,7 @@ BarsPyService.exe - сервис для печати
 
 <table>
 <tr> <td>QTPrintServer.py</td><td>исходний код сервиса</td> </tr>
-<tr> <td>\dist\QTPrintServer.exe</td><td>собранный сервис</td> </tr>
+<tr> <td>\dist\QTPrintServer.exe</td><td>собранный сервер</td> </tr>
 </table>
 **управление:**
    \host\dist\Install.bat - регистрация программы в автозагрузке
