@@ -123,8 +123,7 @@ def requestFun():
         requestMessage["Version"] = version
         return dumps(get_print_list()), 200, {'content-type': 'application/json'}
 
-    # res = index % getJsonPage()
-    res = index
+    res = index.replace("[printerList]",getJsonPage())
     return res, 200
 
 
@@ -135,7 +134,7 @@ def getJsonPage():
     # res = [{'text': 'book report', 'leaf': True}, {'text': 'algebra', 'leaf': True}]
     for prn in printerList:
         res.append({'text': prn, 'leaf': True})
-    return dumps(res)
+    return str(dumps(res))
 
 
 @app.errorhandler(404)

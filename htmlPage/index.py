@@ -10,39 +10,7 @@ index = """<!DOCTYPE html>
             var store = Ext.create('Ext.data.TreeStore', {
                 root: {
                     expanded: true,
-                    children: [
-                        {
-                            text: 'Printers', expanded: true,
-                            children: [{
-                                "text": "Fax (\u043f\u0435\u0440\u0435\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043e 1)",
-                                "leaf": true
-                            }, {
-                                "text": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0432 OneNote 16 (\u043f\u0435\u0440\u0435\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043e 1)",
-                                "leaf": true
-                            }, {
-                                "text": "Microsoft XPS Document Writer (\u043f\u0435\u0440\u0435\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043e 1)",
-                                "leaf": true
-                            }, {
-                                "text": "Microsoft Print to PDF (\u043f\u0435\u0440\u0435\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043e 1)",
-                                "leaf": true
-                            }, {
-                                "text": "OneNote",
-                                "leaf": true
-                            }, {
-                                "text": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0432 OneNote 16",
-                                "leaf": true
-                            }, {
-                                "text": "NPIB9358E (HP LaserJet MFP M426fdn)",
-                                "leaf": true
-                            }, {
-                                "text": "Microsoft XPS Document Writer",
-                                "leaf": true
-                            }, {"text": "Microsoft Print to PDF", "leaf": true}, {
-                                "text": "Fax",
-                                "leaf": true
-                            }, {"text": "Brother QL-810W", "leaf": true}]  /* список принтеров */
-                        }
-                    ]
+                    children: [printerList]
                 }
             });
 
