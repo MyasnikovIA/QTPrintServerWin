@@ -9,7 +9,7 @@ from traceback import format_exc
 from PyQt5.QtGui import QPainter
 from PyQt5.QtWidgets import QApplication, QLabel
 from PyQt5.QtPrintSupport import QPrinter
-from lib.index import index
+from htmlPage.index import index
 
 from lib.extlib1 import extlib1
 from lib.extlib2 import extlib2
@@ -80,7 +80,7 @@ def html_to_image(StrPrintHtml="", printer_name="", widthPage=300, heightPage=10
         # printer.setPaperSize(QSizeF(widthPage, heightPage), QPrinter.DevicePixel)
         printer.setPageMargins(0, 0, 0, 0, QPrinter.DevicePixel)
         # printer.setPrinterName("Brother QL-810W")
-        # printer.setOutputFileName("D:\!PythonProject\Штрихкод_Plagin\QTPrintServerWin\\22222222.pdf")
+        # printer.setOutputFileName("D:\\!PythonProject\\Штрихкод_Plagin\\QTPrintServerWin(25-02-2019)\\PrinterFileName.pdf")
         painter = QPainter()
         painter.begin(printer)
         painter.drawPixmap(-15, -15, label.grab())
@@ -123,7 +123,19 @@ def requestFun():
         requestMessage["Version"] = version
         return dumps(get_print_list()), 200, {'content-type': 'application/json'}
 
-    return index,200
+    # res = index % getJsonPage()
+    res = index
+    return res, 200
+
+
+def getJsonPage():
+    printers = EnumPrinters(PRINTER_ENUM_LOCAL | PRINTER_ENUM_CONNECTIONS)
+    printerList = [printer[2] for printer in printers]
+    res = []
+    # res = [{'text': 'book report', 'leaf': True}, {'text': 'algebra', 'leaf': True}]
+    for prn in printerList:
+        res.append({'text': prn, 'leaf': True})
+    return dumps(res)
 
 
 @app.errorhandler(404)
@@ -142,8 +154,8 @@ def all_other_routes(the_path):
         head = {'content-type': 'application/javascript; charset=utf-8', 'Content-Length': len(locale_ru)}
         return locale_ru, 200, head
 
-    if (the_path == "theme_classic.css"):
-        head = {'content-type': 'text/css; charset=utf-8', 'Content-Length': len(locale_ru)}
+    if (the_path == "theme_classic"):
+        head = {'content-type': 'text/css; charset=utf-8', 'Content-Length': len(theme_classic)}
         return theme_classic, 200, head
     return "no content", 404
 
