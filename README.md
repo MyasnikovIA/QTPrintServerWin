@@ -3,7 +3,7 @@
 Работает на порту 51003
 
 
-BarsPyService.exe - сервис для печати 
+QTPrintServer.exe - сервис для печати 
 
 <table>
 <tr> <td>QTPrintServer.py</td><td>исходний код сервиса</td> </tr>
@@ -11,7 +11,7 @@ BarsPyService.exe - сервис для печати
 </table>
 **управление:**
    \host\dist\Install.bat - регистрация программы в автозагрузке
-    BarsPyServer.exe      - Запуск сервера в фоновом режиме  
+    QTPrintServer.exe     - Запуск сервера в фоновом режиме  
 **Сборка сервиса:**
 <pre>
 pyinstaller --onefile  --noconsole --noupx --icon="app.ico" --hidden-import win32timezone QTPrintServer.py
