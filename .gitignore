@@ -3,3 +3,6 @@
 /__pycache__
 /*.spec
 /lib/__pycache__
+/htmlPage/__pycache__/descriptor.cpython-38.pyc
+/htmlPage/__pycache__/index.cpython-38.pyc
+/lib/css/__pycache__/theme_classic.cpython-38.pyc
