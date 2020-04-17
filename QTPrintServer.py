@@ -31,7 +31,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 
-
 @app.errorhandler(404)
 def not_found(error):
     return "no service", 404
@@ -63,7 +62,7 @@ def get_print_list():
     return requestMessage
 
 
-def html_to_image(StrPrintHtml="", printer_name="", widthPage=300, heightPage=100):
+def html_to_image(StrPrintHtml="", printer_name="", widthPage=300, heightPage=100, leftPage=-15, topPage=-15 ):
     """
     Функция вывода текста на принтер
     :param StrPrintHtml: - Текст HTML
@@ -72,28 +71,28 @@ def html_to_image(StrPrintHtml="", printer_name="", widthPage=300, heightPage=10
     """
     requestMessage = {}
     try:
-        app = QApplication([])
+        app = QApplication(['mainApp'])
         printer = QPrinter()
         requestMessage = {}
         label = QLabel()
         # '<img width="300"  height="100"  alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAB2CAIAAADujy7aAAABuUlEQVR42u3YwY7CIBRAUZj4/7/MLEgIFlqf1YwOPWdlsKlVrlDNqVNKSSnlnNvjqo6MR47PjuP9OSNniJw/foWRa4tc7d45n32tyDvtRyLjkWuIfErjGX4S7BAH4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsSBOEAciANxIA7EgTgQB+JAHIgDxIE4EAfiQByIA3EgDsSBOEAciANxIA7EgTgQB+JAHIgDcYA4EAfiQByIA3EgDsSBOBAHiANxIA7EgTgQB+JAHIgDcYA4EAfiQByIg0/LpRSfAlYOxMGb3FbbJvPdRplzbo/b+CuD/Ugbnw6K4+vKOA6lTuQrg5tZr684HbStfO+a8alX/PvLEMdjwSmZHtZvDW12T8zxSmVc6IZ0utT3c1n72JvdcXw6stKesuAN6d56ML1tnE726W9/fxvrhvR/7zX9FI5LyHgruvD2ccVt5WCpiM9u5MiVtpKL3nOcWPaX/z3y4O0v8z43X9/Nf1bT/7WmR6bD/7sOinn2d5M4sK0gDsQB4uDQLyTS/Ojjiz5LAAAAAElFTkSuQmCC" />'
         label.setText(StrPrintHtml)
-        # label.resize(widthPage, heightPage)
+        label.resize(int(widthPage), int(heightPage))
         printer = QPrinter()
         if printer_name == "":
             print_dialog = QPrintDialog(printer)
             if print_dialog.exec() != QDialog.Accepted:
                 requestMessage["Error"] = "Printer no select"
                 return requestMessage
-        else:
-            printer.setPrinterName(printer_name)
-            # printer.setPrinterName("Brother QL-810W")
-        print(printer_name)
+            printer_name = print_dialog.printer().printerName()
+            # printer_name = GetDefaultPrinter()
+        printer.setPrinterName(printer_name)
+        # printer.setPrinterName("Brother QL-810W")
         printer.setPageMargins(0, 0, 0, 0, QPrinter.DevicePixel)
         # printer.setOutputFileName("C:\\AppServ\\www\\QtPrint\\PrinterFileName.pdf")
         painter = QPainter()
         painter.begin(printer)
-        painter.drawPixmap(-15, -15, label.grab())
+        painter.drawPixmap(int(leftPage),int(topPage), label.grab())
         painter.end()
     except Exception:
         requestMessage["Error"] = "%s" % (format_exc())
@@ -110,6 +109,8 @@ def requestFun():
     printer_name = ""
     widthPage = 300
     heightPage = 100
+    leftPage = -15
+    topPage = -15
     if request.host[:9] != "127.0.0.1":
         if request.host[:9] != "localhost":
             return "no service", 404
@@ -118,10 +119,14 @@ def requestFun():
         widthPage = requestMessage.get("Widthpage")
     if "Heightpage" in requestMessage:
         heightPage = requestMessage.get("Heightpage")
+    if "Leftpage" in requestMessage:
+        leftPage = requestMessage.get("Leftpage")
+    if "Toppage" in requestMessage:
+        topPage = requestMessage.get("Toppage")
     if "Printername" in requestMessage:
         printer_name = requestMessage.get("Printername")
     if "Print" in requestMessage:
-        res = html_to_image(requestMessage["Print"], printer_name, widthPage, heightPage)
+        res = html_to_image(requestMessage["Print"], printer_name, widthPage, heightPage,leftPage,topPage)
         return dumps(res), 200, {'content-type': 'application/json'}
     if "Getprinterlist" in requestMessage:
         return dumps(get_print_list()), 200, {'content-type': 'application/json'}
