@@ -71,5 +71,5 @@ pip install Flask
 pip install Flask-cors
 pip install qt5
 pip install pyinstaller
-pip install win32print
+pip install win32printing
 </pre> 
