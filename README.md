@@ -1,4 +1,4 @@
-# PrintServereWin
+# PrintServerWin
 Локальный сервис для windows(печать)
 Работает на порту 51003
 
@@ -69,6 +69,7 @@ BarsPySend({"Print":"< h1>Привет Мир-HelloWorld</h1>"}) // отправ
 <pre>
 pip install Flask
 pip install Flask-cors
-pip qt5
+pip install qt5
 pip install pyinstaller
+pip install win32print
 </pre> 
