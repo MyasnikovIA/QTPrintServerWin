@@ -73,3 +73,6 @@ pip install qt5
 pip install pyinstaller
 pip install win32printing
 </pre> 
+
+<h5>Python3.8 с установленными пакетами распоковать в C:\Program Files\Python38</h5>
+<pre>https://yadi.sk/d/nYL9MjYO_oMsBA</pre> 
