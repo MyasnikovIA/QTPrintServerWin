@@ -1,0 +1,516 @@
+﻿//==========================================================================================
+//
+//	機種付随情報ファイル
+//
+//	QL-720NW
+//
+//	Copyright (C) 2018 Brother Industries. Ltd.
+//
+//==========================================================================================
+
+[Model]
+dmDeviceName		= "Brother QL-720NW"	// デバイス名
+szSeriesCode		= "4"					// シリーズコード（文字列表記）
+szModelCode		= "7"					// モデルコード（文字列表記）
+dwHeadPinNum		= 720					// ヘッドピン数
+nPaperCnt		= 20						// 用紙数
+wSplit			= 1						// スプリット数
+nDefaultPaperSize	= 259					// デフォルトの用紙ID
+nDefaultPaperLength	= 1000					// デフォルトの用紙長（1/10mm）
+wResolutionNum		= 1						// 解像度数
+wResolutions		= 300,300				// 解像度配列（X,Y方向、dot）
+wAutoCut		= 1						// 本体がオートカットに対応しているか（0 or 1）
+wCutMark		= 0						// 本体がカットマークに対応しているか（0 or 1）
+wHalfCut		= 0						// 本体がハーフカットに対応しているか
+wChainPrint		= 0						// 本体がチェインプリントに対応しているか
+wCutAtEnd		= 1			// 本体がカットアットエンドに対応しているか
+wMirrorPrint		= 0			// 本体がミラー印刷に対応しているか
+wCopyPrint		= 1						// 本体がコピー印刷に対応しているか
+wSpecialTapePrint	= 0						// 本体が特殊テープ印刷に対応しているか
+wRasterDataCompression	= 0						// ラスターデータを圧縮するか (0:無圧縮、1:TIFF)
+wFeedAt12mmDia		= 1						// 
+dwPrnFileSize		= 112640					// 本体通信用PRNファイルサイズ(byte)
+dwBufferFullLines	= 1200						// バッファフル印刷を行うライン数
+wColorDetection		= 0
+wOpenPtouchEditor	= 0
+szPreWriteFile          = "pdt3734.bin"
+
+[Paper00]
+szPaperName_mm		= "17mm x 54mm"
+szPaperName_Inch	= "0.66" x 2.1""
+nType			= 11
+nPaperSize		= 269
+nPaperWidth		= 170
+nImageAreaWidth		= 140
+nPaperWidthRes		= 201
+nImageAreaWidthRes	= 165 
+nPaperLength		= 539
+nImageAreaLength	= 479
+nPaperLengthRes		= 636
+nImageAreaLengthRes	= 566
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 555
+wPinOffsetRight		= 0
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 539					// 最大長（1/10mm）
+nMinLength		= 539					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper01]
+szPaperName_mm		= "17mm x 87mm"
+szPaperName_Inch	= "0.66" x 3.4""
+nType			= 11
+nPaperSize		= 270
+nPaperWidth		= 170
+nImageAreaWidth		= 140
+nPaperWidthRes		= 201
+nImageAreaWidthRes	= 165 
+nPaperLength		= 869
+nImageAreaLength	= 809
+nPaperLengthRes		= 1026
+nImageAreaLengthRes	= 956
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 555
+wPinOffsetRight		= 0
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 869					// 最大長（1/10mm）
+nMinLength		= 869					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper02]
+szPaperName_mm		= "23mm x 23mm"
+szPaperName_Inch	= "0.9" x 0.9""
+nType			= 11
+nPaperSize		= 370
+nPaperWidth		= 230
+nImageAreaWidth		= 200
+nPaperWidthRes		= 272
+nImageAreaWidthRes	= 236 
+nPaperLength		= 230
+nImageAreaLength	= 171
+nPaperLengthRes		= 272
+nImageAreaLengthRes	= 202
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 442
+wPinOffsetRight		= 42
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 230					// 最大長（1/10mm）
+nMinLength		= 230					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper03]
+szPaperName_mm		= "29mm x 42mm"
+szPaperName_Inch	= "1.1" x 1.6""
+nType			= 11
+nPaperSize		= 358
+nPaperWidth		= 290
+nImageAreaWidth		= 259
+nPaperWidthRes		= 342
+nImageAreaWidthRes	= 306 
+nPaperLength		= 419
+nImageAreaLength	= 360
+nPaperLengthRes		= 495
+nImageAreaLengthRes	= 425
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 408
+wPinOffsetRight		= 6
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35
+nMaxLength		= 419
+nMinLength		= 419
+dwPaperAbility01	= 0x00000000
+
+[Paper04]
+szPaperName_mm		= "29mm x 90mm"
+szPaperName_Inch	= "1.1" x 3.5""
+nType			= 11
+nPaperSize		= 271
+nPaperWidth		= 290
+nImageAreaWidth		= 259
+nPaperWidthRes		= 342
+nImageAreaWidthRes	= 306 
+nPaperLength		= 898
+nImageAreaLength	= 839
+nPaperLengthRes		= 1061
+nImageAreaLengthRes	= 991
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 408
+wPinOffsetRight		= 6
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 898					// 最大長（1/10mm）
+nMinLength		= 898					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper05]
+szPaperName_mm		= "38mm x 90mm"
+szPaperName_Inch	= "1.4" x 3.5""
+nType			= 11
+nPaperSize		= 272
+nPaperWidth		= 380
+nImageAreaWidth		= 350
+nPaperWidthRes		= 449
+nImageAreaWidthRes	= 413 
+nPaperLength		= 898
+nImageAreaLength	= 839
+nPaperLengthRes		= 1061
+nImageAreaLengthRes	= 991
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 295
+wPinOffsetRight		= 12
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 898					// 最大長（1/10mm）
+nMinLength		= 898					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper06]
+szPaperName_mm		= "39mm x 48mm"
+szPaperName_Inch	= "1.5" x 1.8""
+nType			= 11
+nPaperSize		= 367
+nPaperWidth		= 390
+nImageAreaWidth		= 360
+nPaperWidthRes		= 461
+nImageAreaWidthRes	= 425 
+nPaperLength		= 478
+nImageAreaLength	= 419
+nPaperLengthRes		= 565
+nImageAreaLengthRes	= 495
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 289
+wPinOffsetRight		= 6
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 478					// 最大長（1/10mm）
+nMinLength		= 478					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper07]
+szPaperName_mm		= "52mm x 29mm"
+szPaperName_Inch	= "2" x 1.1""
+nType			= 11
+nPaperSize		= 374
+nPaperWidth		= 520
+nImageAreaWidth		= 489
+nPaperWidthRes		= 614
+nImageAreaWidthRes	= 578 
+nPaperLength		= 289
+nImageAreaLength	= 229
+nPaperLengthRes		= 341
+nImageAreaLengthRes	= 271
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 142
+wPinOffsetRight		= 0
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 289					// 最大長（1/10mm）
+nMinLength		= 289					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper08]
+szPaperName_mm		= "60mm x 86mm"
+szPaperName_Inch	= "2.3" x 3.4""
+nType			= 11
+nPaperSize		= 383
+nPaperWidth		= 600
+nImageAreaWidth		= 569
+nPaperWidthRes		= 708
+nImageAreaWidthRes	= 672 
+nPaperLength		= 868
+nImageAreaLength	= 808
+nPaperLengthRes		= 1024
+nImageAreaLengthRes	= 954
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 24
+wPinOffsetRight		= 24
+nMinFeed		= 35
+nMinNoCutFeed		= 0
+nMaxFeed		= 35
+nMaxLength		= 868
+nMinLength		= 868
+dwPaperAbilities01	= 0x00000000
+
+[Paper09]
+szPaperName_mm		= "62mm x 29mm"
+szPaperName_Inch	= "2.4" x 1.1""
+nType			= 11
+nPaperSize		= 274
+nPaperWidth		= 620
+nImageAreaWidth		= 589
+nPaperWidthRes		= 732
+nImageAreaWidthRes	= 696 
+nPaperLength		= 289
+nImageAreaLength	= 229
+nPaperLengthRes		= 341
+nImageAreaLengthRes	= 271
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 12
+wPinOffsetRight		= 12
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 289					// 最大長（1/10mm）
+nMinLength		= 289					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper10]
+szPaperName_mm		= "62mm x 100mm"
+szPaperName_Inch	= "2.4" x 3.9""
+nType			= 11						// 用紙タイプ（1:自由長、2:固定長、3:RFIDテープ）
+nPaperSize		= 275
+nPaperWidth		= 620
+nImageAreaWidth		= 589
+nPaperWidthRes		= 732
+nImageAreaWidthRes	= 696 
+nPaperLength		= 998
+nImageAreaLength	= 939
+nPaperLengthRes		= 1179
+nImageAreaLengthRes	= 1109
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 12
+wPinOffsetRight		= 12
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 998					// 最大長（1/10mm）
+nMinLength		= 998					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper11]
+szPaperName_mm		= "12mm Dia"
+szPaperName_Inch	= "0.47" Dia"
+nType			= 11
+nPaperSize		= 362
+nPaperWidth		= 120
+nImageAreaWidth		= 80
+nPaperWidthRes		= 142
+nImageAreaWidthRes	= 94 
+nPaperLength		= 120
+nImageAreaLength	= 80
+nPaperLengthRes		= 142
+nImageAreaLengthRes	= 94
+nPhysicalOffsetX	= 24
+nPhysicalOffsetY	= 24
+wPinOffsetLeft		= 513
+wPinOffsetRight		= 113
+nMinFeed		= 24					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 24					// 最大フィード量(dot)
+nMaxLength		= 120					// 最大長（1/10mm）
+nMinLength		= 120					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000008				// 用紙の能力
+
+[Paper12]
+szPaperName_mm		= "24mm Dia"
+szPaperName_Inch	= "0.94" Dia"
+nType			= 11
+nPaperSize		= 363
+nPaperWidth		= 240
+nImageAreaWidth		= 200
+nPaperWidthRes		= 284
+nImageAreaWidthRes	= 236 
+nPaperLength		= 240
+nImageAreaLength	= 200
+nPaperLengthRes		= 284
+nImageAreaLengthRes	= 236
+nPhysicalOffsetX	= 24
+nPhysicalOffsetY	= 24
+wPinOffsetLeft		= 442
+wPinOffsetRight		= 42
+nMinFeed		= 24					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 24					// 最大フィード量(dot)
+nMaxLength		= 240					// 最大長（1/10mm）
+nMinLength		= 240					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000008				// 用紙の能力
+
+[Paper13]
+szPaperName_mm		= "58mm Dia"
+szPaperName_Inch	= "2.2" Dia"
+nType			= 11
+nPaperSize		= 273
+nPaperWidth		= 583
+nImageAreaWidth		= 523
+nPaperWidthRes		= 688
+nImageAreaWidthRes	= 618 
+nPaperLength		= 583
+nImageAreaLength	= 523
+nPaperLengthRes		= 688
+nImageAreaLengthRes	= 618
+nPhysicalOffsetX	= 35
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 51
+wPinOffsetRight		= 51
+nMinFeed		= 35					// 最小フィード量(dot)
+nMinNoCutFeed		= 0					// 前余白カットしない最小フィード量(dot)
+nMaxFeed		= 35					// 最大フィード量(dot)
+nMaxLength		= 583					// 最大長（1/10mm）
+nMinLength		= 583					// 最小長（1/10mm）
+dwPaperAbilities01	= 0x00000008				// 用紙の能力
+
+[Paper14]
+szPaperName_mm		= "12mm"
+szPaperName_Inch	= "0.47""
+nType			= 10
+nPaperSize		= 257
+nPaperWidth		= 120
+nImageAreaWidth		= 90
+nPaperWidthRes		= 142
+nImageAreaWidthRes	= 106 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 585
+wPinOffsetRight		= 29
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper15]
+szPaperName_mm		= "29mm"
+szPaperName_Inch	= "1.1""
+nType			= 10
+nPaperSize		= 258
+nPaperWidth		= 290
+nImageAreaWidth		= 259
+nPaperWidthRes		= 342
+nImageAreaWidthRes	= 306 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 408
+wPinOffsetRight		= 6
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper16]
+szPaperName_mm		= "38mm"
+szPaperName_Inch	= "1.4""
+nType			= 10
+nPaperSize		= 264
+nPaperWidth		= 380
+nImageAreaWidth		= 350
+nPaperWidthRes		= 449
+nImageAreaWidthRes	= 413 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 295
+wPinOffsetRight		= 12
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper17]
+szPaperName_mm		= "50mm"
+szPaperName_Inch	= "1.9""
+nType			= 10
+nPaperSize		= 262
+nPaperWidth		= 500
+nImageAreaWidth		= 469
+nPaperWidthRes		= 590
+nImageAreaWidthRes	= 554 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 154
+wPinOffsetRight		= 12
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper18]
+szPaperName_mm		= "54mm"
+szPaperName_Inch	= "2.1""
+nType			= 10
+nPaperSize		= 261
+nPaperWidth		= 538
+nImageAreaWidth		= 500
+nPaperWidthRes		= 636
+nImageAreaWidthRes	= 590 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 23
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 130
+wPinOffsetRight		= 0
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
+
+[Paper19]
+szPaperName_mm		= "62mm"
+szPaperName_Inch	= "2.4""
+nType			= 10
+nPaperSize		= 259
+nPaperWidth		= 620
+nImageAreaWidth		= 589
+nPaperWidthRes		= 732
+nImageAreaWidthRes	= 696 
+nPaperLength		= 0
+nImageAreaLength	= 0
+nPaperLengthRes		= 0
+nImageAreaLengthRes	= 0
+nPhysicalOffsetX	= 18
+nPhysicalOffsetY	= 35
+wPinOffsetLeft		= 12
+wPinOffsetRight		= 12
+nMinFeed		= 35
+nMinNoCutFeed		= 35
+nMaxFeed		= 1500
+nMaxLength		= 10000
+nMinLength		= 127
+dwPaperAbilities01	= 0x00000000				// 用紙の能力
